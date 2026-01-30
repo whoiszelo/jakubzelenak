@@ -1,1 +1,0 @@
-# jakubzelenak.github.io
