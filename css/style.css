@@ -55,7 +55,7 @@ nav div {
   justify-content: flex-end;
   gap: 20px;
   align-items: center;
-  font-family: 'Montserrat' serif;
+  font-family: 'Montserrat', serif;
 }
 
 nav a {
@@ -72,19 +72,40 @@ nav a:hover{
   text-decoration: underline;
 }
 /***********************  Footer Section   **************************/
-footer {
-	display: flex;
-  justify-content: center;
-  background-color: var(--green-soft);
-  font-size: 14px;
-  letter-spacing: 0.5px;
+.site-footer {
+  background: var(--green-soft);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 16px 0;
   color: var(--text-dark);
-  padding: 14px 0;
 }
 
-footer a {
-  color: white;
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.footer-left {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.site-footer a {
+  color: var(--green-dark);
   text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
 }
 
 /*********** Splash Page ************************/
@@ -170,20 +191,27 @@ section h3{
 }
 section dl {
   display: grid;
-  grid-template-columns: 320 px 1fr;
-  column-gap: 40px;
-  row-gap: 14px;
-  gap: 10px;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  column-gap: 32px;
+  row-gap: 12px;
   margin: 0;
-  font-family: 'Inter', sans-serif;
 }
 
 section dl dt {
-  padding-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid rgba(0,0,0,0.06);
   font-size: 16px;
   font-weight: 600;
 }
+
+section dl dd {
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 
 section dl dd:first-child {
   padding-top: 0;
@@ -251,15 +279,70 @@ section a:hover {
 
 /**************   Responsiveness   *****************/
 @media (max-width: 680px) {
+   .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    }
+    
+    .header-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 18px;
+      padding: 28px 16px;
+    }
+
+    header img {
+      max-width: 160px;
+    }
+    
+    .address {
+      text-align: center;
+      margin: 10px 0 0 0;
+    }
+
+    nav div {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 10px;
+    }
+    
     nav {
       flex-direction: column;
     }
     .three-col {
       grid-template-columns: 1fr;
     }
+    section dl {
+      grid-template-columns: 1fr;
+    }
   }
 
 /**************   Contact Page   *****************/
+.one-col form {
+  display: grid;
+  gap: 10px;
+}
+
+.one-col label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.one-col button {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green-dark);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.one-col button:hover {
+  opacity: 0.92;
+}
 .one-col {
   max-width: 600px;
   margin: 24px auto;
